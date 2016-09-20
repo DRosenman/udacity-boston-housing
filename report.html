@@ -13791,9 +13791,10 @@ jLtcFbjvbh0gIodw93pnO9tXAi9Uu7nF7uo0zYqVJTLG+CQiJaoaGeg4jGls1uMzxvhj/xWbHyXr
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
-<p><em>Yes, when the maximum depth is setted to one, although the low variance we can notice a high bias caused by the low complexity of the model. </em></p>
+<p><em>When the maximum depth is setted to one, it's easily noticed a low variance and suffering from high bias caused by the low complexity of the model.</em></p>
 <p><em>When the depth is 10 there are high variance, but the bias still low.</em></p>
-<p><em>The visual cues that allow us to notice that the variance is low is the both curves next to each other, meaning that there is a small variability from the one to another on that point, also we can notice a low bias if we pay some attention on the training curve shaded region, it's almost unseen, it's an indicator of how far are the test scores and training scores from each other.</em></p>
+<p><em>The visual cues that allow us to notice that the model is suffering from low variance and high bias when the depth is low (max_depth = 1) are both curves next to each other, meaning that there's a small variability from one to another on that point and the low score which means that the model is underfitting(high bias), in other words, the model cannot capture the underlying trend of the data, in most cases because the model is too simple.</em></p>
+<p><em>When the depth is higher (max_depth = 10) it's easily noticed that the curves are very distant from each other which means high variance and low bias due the high complexity of the model. In this case, the model is overfitting(high variance), in other words, the model is so much complex and it's memorizing the data it has seen before that's unable to generalize from new/unseen data.</em></p>
 
 </div>
 </div>
@@ -13814,7 +13815,8 @@ jLtcFbjvbh0gIodw93pnO9tXAi9Uu7nF7uo0zYqVJTLG+CQiJaoaGeg4jGls1uMzxvhj/xWbHyXr
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
-<p><em>I believe that 3 is the maximum of depth that will result in the best model, mainly because with depth greater than 3 or 4 will make no difference or let the things worse accordingly with the graph analysed above. If we take a look at the graph above on the validation score we will see that the points 3 or 4 are the points that has the highest scores, something about 0.72 and 0.73 I guess and after that all the points loose scores when we start to set a higher maximum depth.</em></p>
+<p><em>I believe that 3 is the maximum of depth that will result in the best model, mainly because with depth greater than 3 or 4 will make no difference or let the things worse accordingly with the graph analysed above. If we take a look at the graph above on the validation score we will see that the points 3 or 4 are the points that has the highest scores, something about 0.72 and 0.73, I guess, and after that all the points lose scores when we start to set a higher maximum depth.</em></p>
+<p><em>In the perfect world, with infinite data and perfect models, we should be able to minimizes the variance and the bias to zero, however, in the real world with finite data and imperfect models it's not possible, so we tries to find our optimal model minimizing at maximum both variance and bias and find a tradeoff between these two in order to get the best possible results.</em></p>
 
 </div>
 </div>
